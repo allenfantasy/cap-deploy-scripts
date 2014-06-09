@@ -1,0 +1,47 @@
+# coding: utf-8
+source 'http://ruby.taobao.org'
+
+gem 'rails', '3.2.14'
+gem 'sass-rails',   '~> 3.2.3'
+gem 'coffee-rails', '~> 3.2.1'
+gem 'uglifier', '>= 1.0.3'
+gem 'jquery-rails'
+gem 'turbo-sprockets-rails3'
+
+### database ###
+gem 'sqlite3', :group => [:development, :test]
+gem 'pg', :group => :production
+
+# uncomment if mongodb
+#
+# gem 'mongoid'
+# gem 'mongoid_rails_migration'
+
+### 用户系统 ###
+gem 'devise'
+gem 'cancan'
+
+### 系统配置 ###
+gem 'figaro'
+
+### 文件上传 ###
+gem 'paperclip', '~> 3.0'
+
+group :development, :test do
+  gem 'better_errors'
+  gem 'binding_of_caller', :platform => [:mri_19, :rbx]
+  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'capistrano', '~> 2.15'
+  gem 'rvm-capistrano'
+  # To use debugger
+  # gem 'debugger'
+end
+
+group :production do
+  gem 'unicorn'
+  # uncomment this line if this app would be deployed on Heroku
+  # gem 'rails_12factor'
+end
+
+ruby "1.9.3"
